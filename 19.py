@@ -1,13 +1,18 @@
-def count(a, b):
+def get_squares_count(a, b):
+    """Вычисляет минимальное количество квадратов при разрезании прямоугольника.
+
+    Процесс идет рекурсивно: от большей стороны отрезается максимально возможный
+    квадрат, пока прямоугольник не превратится в квадрат.
+    """
     if a == b:
         return 1
-    
+
     if a > b:
-        return 1 + count(a - b, b)
-    else:
-        return 1 + count(a, b - a)
+        return 1 + get_squares_count(a - b, b)
+
+    return 1 + get_squares_count(a, b - a)
 
 
 # Пример использования: прямоугольник 10 x 3
 # Отрежутся квадраты: 3x3, 3x3, 3x3, 1x1, 1x1, 1x1. Всего 6.
-print(count(10, 3))
+print(get_squares_count(10, 3))
