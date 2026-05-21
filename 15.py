@@ -1,10 +1,14 @@
-def ten_to_bin(x):
+def convert_to_binary(x):
+    """Переводит целое неотрицательное число из десятичной системы в двоичную.
+
+    Использует рекурсивный метод деления на 2.
+    """
     if x < 2:
         return str(x)
 
-    return ten_to_bin(x // 2) + str(x % 2)
+    return convert_to_binary(x // 2) + str(x % 2)
 
 
 # Пример использования
-print(ten_to_bin(10))  # Выведет "1010"
-print(ten_to_bin(25))  # Выведет "11001"
+print(convert_to_binary(10))  # Выведет "1010"
+print(convert_to_binary(25))  # Выведет "11001"
