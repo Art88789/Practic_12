@@ -1,9 +1,11 @@
-def mod_number(a, b):
+def get_remainder(a, b):
+    """Вычисляет остаток от деления числа 'a' на 'b' рекурсивным вычитанием.
+    """
     if a < b:
         return a
-    
-    return mod_number(a - b, b)
+
+    return get_remainder(a - b, b)
 
 
 # Пример использования: 17 разделить на 5, остаток 2
-print(mod_number(17, 5))
+print(get_remainder(17, 5))
