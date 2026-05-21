@@ -1,9 +1,11 @@
-def nod(a, b):
+def get_gcd(a, b):
+    """Находит наибольший общий делитель (НОД) двух чисел алгоритмом Евклида.
+    """
     if b == 0:
         return a
-    
-    return nod(b, a % b)
+
+    return get_gcd(b, a % b)
 
 
 # Пример использования: НОД для 48 и 18 равен 6
-print(nod(48, 18))
+print(get_gcd(48, 18))
