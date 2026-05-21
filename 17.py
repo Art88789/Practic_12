@@ -1,24 +1,30 @@
 def check_divisor(x, d):
+    """Рекурсивно проверяет, делится ли число 'x' на делитель 'd'.
+
+    Продолжает проверку, увеличивая 'd' на 1, пока d * d не станет больше x.
+    """
     if d * d > x:
-        return 1
-    
+        return True
+
     if x % d == 0:
-        return 0
+        return False
 
     return check_divisor(x, d + 1)
 
 
-def function1(x):
+def is_prime(x):
+    """Определяет, является ли целое число 'x' простым.
+    """
     if x < 2:
-        return 0
+        return False
 
     if x == 2:
-        return 1
+        return True
 
     return check_divisor(x, 2)
 
 
 # Примеры использования
-print(function1(7))   # Выведет 1 (простое)
-print(function1(10))  # Выведет 0 (составное)
-print(function1(1))   # Выведет 0 (не простое)
+print(is_prime(7))   # Выведет True (простое)
+print(is_prime(10))  # Выведет False (составное)
+print(is_prime(1))   # Выведет False (не простое)
